@@ -11,19 +11,24 @@ namespace Gameplay.Commands
 
     public class LoadLevelCommand : IAsyncCommand<LoadLevelData>
     {
+        private UniTask[] cacheTasks = new UniTask[2];
+
         public LoadLevelCommand()
         {
             // Setup dependencies
         }
         
-        public UniTask ExecuteAsync(LoadLevelData commandData, CancellationToken disposeCtsToken)
+        public async UniTask ExecuteAsync(LoadLevelData commandData, CancellationToken disposeCtsToken)
         {
             var levelIndex = commandData.LevelIndex;
             
             // Unload ald level
-            // Load new level
+
+            cacheTasks[0] = UniTask.WaitForSeconds(1f, cancellationToken: disposeCtsToken);
+            cacheTasks[1] = UniTask.WaitUntil(() => true, cancellationToken: disposeCtsToken);
+            await UniTask.WhenAll(cacheTasks);
             
-            return UniTask.CompletedTask;
+            // Load new level
         }
     }
 }
