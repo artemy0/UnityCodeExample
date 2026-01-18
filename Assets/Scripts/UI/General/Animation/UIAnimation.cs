@@ -10,8 +10,8 @@ namespace UI.General.Animation
     [DeclareFoldoutGroup(EVENTS_GROUP)]
     public abstract class UIAnimation : MonoBehaviour
     {
-        public const string ANIMATION_GROUP = "Animation settings";
-        public const string EVENTS_GROUP = "Events";
+        private const string ANIMATION_GROUP = "Animation settings";
+        private const string EVENTS_GROUP = "Events";
 
         [SerializeField] [Group(ANIMATION_GROUP)]
         private bool resetAnimationOnStartPlaying = true;
