@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using General.Mock;
+using General.Configs;
 
 namespace Tools.PrepareBuild.Editor.Extensions
 {

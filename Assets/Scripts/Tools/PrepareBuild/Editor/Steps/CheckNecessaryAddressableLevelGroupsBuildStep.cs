@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using General.Mock;
+using General.Configs;
 using Tools.PrepareBuild.Editor.Extensions;
 using Tools.PrepareBuild.Editor.Steps.Abstraction;
 using UnityEditor;
